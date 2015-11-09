@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>labels</title>
+</head>
+<body>
+    <script>
+        function Validate(){
+            var test = document.getElementById("test");
+            var btn = document.getElementById("btn");
+            var text_name = document.getElementById("text_name");
+            if(text_name.value.trim() === ""){
+                var label = document.createElement("label")
+                label.setAttribute("for","text_name");
+                test.insertBefore(label,btn);
+                text_name.labels[1].innerHTML = "请输入姓名";
+                text_name.labels[1].setAttribute("style","font-size:16px;color:Red")
+            }
+        }
+    </script>
+    <form id="test">
+        <label id="labels" for="text_name">姓名：</label>
+        <input type="text" id="text_name">
+        <input type="button" id="btn" value="验证" onclick="Validate()">
+    </form>
+</body>
+</html>
