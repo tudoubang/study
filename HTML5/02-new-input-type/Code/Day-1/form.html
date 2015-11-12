@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+    <script>
+        function check(){
+            var email = document.getElementById("email");
+            if(email.value === ""){
+                alert("Email不能为空");
+                return false;
+            }else if(!email.checkValidity()){
+                alert("Email不正确");
+                return false;
+            }
+        }
+    </script>
+    <form id="test" onsubmit="check()" novalidate="true">
+        <label>Email</label>
+        <input type="email" name="email" id="email">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
